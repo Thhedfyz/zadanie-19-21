@@ -1,0 +1,19 @@
+def f(s,xod): 
+    if s >= 47 or xod > 4: 
+        return xod == 4 or xod == 2 
+    if xod%2 == 0:
+        return all([f(s + 2,xod + 1), f(s * 3, xod + 1)]) 
+    return any([f(s + 2,xod + 1), f(s * 3, xod + 1)]) 
+for i in range(1,47): 
+    if f(i,0):
+        print(i)
+
+def f(s,xod): 
+    if s >= 47 or xod > 4: 
+        return xod == 2 
+    if xod%2 == 0: 
+        return all([f(s + 2,xod + 1), f(s * 3, xod + 1)]) 
+    return any([f(s + 2,xod + 1), f(s * 3, xod + 1)]) 
+for i in range(1,47): 
+    if f(i,0):
+        print(i)
